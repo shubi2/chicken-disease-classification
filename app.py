@@ -35,7 +35,7 @@ def trainRoute():
 @app.route('/predict',methods=['GET','POST'])
 @cross_origin()
 def predictRoute():
-    image=request.json['image']
+    image=request.json['image'] add
     decodeImage(image,clApp.filename)
     result=clApp.classifier.predict()
     return jsonify(result)
@@ -43,4 +43,4 @@ def predictRoute():
 
 if __name__=='__main__':
     clApp=ClientApp()
-    app.run(host='0.0.0.0', port= 8000)
+    app.run(host='0.0.0.0', port= 8080)
